@@ -1,6 +1,7 @@
 const multer = require('multer');
 const Firm = require('../models/Firm');
 const Vendor = require('../models/Vendor');
+const path = require('path')
 
  const storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -48,7 +49,7 @@ const addFirm = async(req,res) => {
 
     } catch (error) {
         console.error(error)
-        res.status(500).json("intenal server error")
+        res.status(500).json("intenal server 123 error")
     }
 }
 
@@ -61,7 +62,7 @@ const deleteFirmById = async (req,res) =>{
       }
     }catch(error){
       console.error(error);
-      res.status(500).json({error :"nternal server error"})
+      res.status(500).json({error :"Internal server error"})
     }
   
   }

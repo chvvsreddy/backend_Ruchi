@@ -5,14 +5,15 @@ const vendorRoutes = require('./routes/vendorRoutes');
 const bodyParser = require('body-parser');
 const firmRoutes = require('./routes/firmroutes');
 const productRoutes = require('./routes/productroutes');
-//const cors = require('cors')
+const cors = require('cors')
 const path = require('path')
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 dotEnv.config();
-//app.use(cors())
+app.use(cors())
+
 mongoose
   .connect(process.env.RUCHI_URI)
   .then(() => console.log("Mongoose DB connected Successfully"))
